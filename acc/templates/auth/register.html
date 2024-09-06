@@ -1,0 +1,33 @@
+{% extends 'layouts/app.html' %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-sm-6">
+        <h2 class="text-muted">Register</h2>
+        <form method="POST" action="{% url 'register' %}">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+
+            <div class="form-group">
+                <label for="{{ form.username.id_for_label }}">Username:</label>
+                {{ form.username }}
+                <span class="text-danger">{{ form.username.errors }}</span>
+            </div>
+
+            <div class="form-group">
+                <label for="{{ form.password1.id_for_label }}">Password:</label>
+                {{ form.password1 }}
+                <span class="text-danger">{{ form.password1.errors }}</span>
+            </div>
+
+            <div class="form-group">
+                <label for="{{ form.password2.id_for_label }}">Re-type Password:</label>
+                {{ form.password2 }}
+                <span class="text-danger">{{ form.password2.errors }}</span>
+            </div>
+
+            <button type="submit" class="btn btn-dark">Submit</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
