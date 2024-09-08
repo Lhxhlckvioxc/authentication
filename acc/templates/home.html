@@ -1,0 +1,28 @@
+{% extends 'layouts/app.html' %}
+
+{% block content %}
+<div class="jumbotron text-center">
+    <h1 class="display-4">Welcome to Authsys</h1>
+    <p class="lead">A simple authentication system built with Django.</p>
+    <hr class="my-4">
+    <p>To get started, please login or register if you're new here.</p>
+    <a class="btn btn-dark btn-lg" href="{% url 'login' %}" role="button">Login</a>
+    <a class="btn btn-secondary btn-lg" href="{% url 'register' %}" role="button">Register</a>
+</div>
+
+<div class="row">
+    <div class="col-sm-6">
+        <h2>About Authsys</h2>
+        <p>Authsys is a simple and secure authentication system designed to help manage user access. It includes features like user registration, login, and a personalized dashboard.</p>
+    </div>
+    <div class="col-sm-6">
+        <h2>Why Choose Us?</h2>
+        <ul>
+            <li>Secure user authentication</li>
+            <li>Easy to use interface</li>
+            <li>Responsive design</li>
+            <li>Built with modern web technologies</li>
+        </ul>
+    </div>
+</div>
+{% endblock %}
